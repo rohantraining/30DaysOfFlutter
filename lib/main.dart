@@ -1,6 +1,7 @@
-// u-Untracked aur A-Add hogayi sari files git cmds ke liye
+// U-Untracked aur A-Add hogayi sari files git cmds ke liye. class ek blueprint hain usse jo bana woh object hain
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/home_page.dart';
+import 'package:flutter_application_2/pages/home_page.dart';
+import 'package:flutter_application_2/pages/login_page.dart';
 
 void main() {
   //main method hain aur runApp method call kar ho raha
@@ -8,6 +9,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  //class hain stateless widget
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -21,7 +23,17 @@ class MyApp extends StatelessWidget {
     // final mein data modify kar sakte hain aur const mein nhi kar sakte hain
 
     return MaterialApp(
-      home: HomePage(),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      initialRoute: "/home", // by default home page open hota hain
+      routes: {
+        "/": (context) => new LoginPage(),
+        "/home": (context) => HomePage(),
+        "/Login": (context) => LoginPage()
+      },
     );
   }
 }

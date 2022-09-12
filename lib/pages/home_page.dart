@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //build method hain
     return Scaffold(
       appBar: AppBar(
         title: Text("Catalog App"),
