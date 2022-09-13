@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/pages/home_page.dart';
 import 'package:flutter_application_2/pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+//cmd + click to see anyones documentation
 
 void main() {
   //main method hain aur runApp method call kar ho raha
@@ -24,13 +27,17 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.lato().fontFamily,
+      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      initialRoute: "/home", // by default home page open hota hain
+      // initialRoute: "/home", // by default home page open hota hain
+      initialRoute: "/",
       routes: {
-        "/": (context) => new LoginPage(),
+        "/": (context) => LoginPage(),
         "/home": (context) => HomePage(),
         "/Login": (context) => LoginPage()
       },
