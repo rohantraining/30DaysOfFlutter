@@ -1,4 +1,8 @@
 // U-Untracked aur A-Add hogayi sari files git cmds ke liye. class ek blueprint hain usse jo bana woh object hain
+// 3 trees in flutter:- Widget(what we write, immutable), Element(it calls build method and redraws,mutable) and Render Tree(render paints).
+// The info goes from widget to element and element to render
+//React Native use native widgets/components, flutter draws by itself
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/pages/home_page.dart';
 import 'package:flutter_application_2/pages/login_page.dart';
