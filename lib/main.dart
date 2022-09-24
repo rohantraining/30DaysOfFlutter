@@ -2,6 +2,7 @@
 // 3 trees in flutter:- Widget(what we write, immutable), Element(it calls build method and redraws,mutable) and Render Tree(render paints).
 // The info goes from widget to element and element to render
 //React Native use native widgets/components, flutter draws by itself
+//see video 4:10:40
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/pages/home_page.dart';
