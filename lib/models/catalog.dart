@@ -1,7 +1,8 @@
 class CatalogModel {
-  static final items = [
+  static List<Item> items = [
     //static bcoz to directly access it
     Item(
+        //item pahila constructor hain
         id: 1,
         name: "iPhone 12 Pro",
         desc: "Apple iPhone 12th generation",
@@ -27,4 +28,28 @@ class Item {
       required this.price,
       required this.color,
       required this.image});
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    //this process is to do mapping of items
+    //method to decode
+    return Item(
+      id: map["id"],
+      name: map["name"],
+      desc: map["desc"],
+      price: map["price"],
+      color: map["color"],
+      image: map["image"],
+    );
+  }
+  //key string hain aur key ka value dynamic hain kyuki value int, number bhi hain
+
+  //method to encode
+  toMap() => {
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "price": price,
+        "color": color,
+        "image": image,
+      };
 }
