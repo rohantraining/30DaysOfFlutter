@@ -13,7 +13,8 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(), //cross button to go back
+      appBar:
+          AppBar(backgroundColor: Colors.transparent), //cross button to go back
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -36,8 +37,8 @@ class HomeDetailPage extends StatelessWidget {
                   shape: MaterialStateProperty.all(
                     StadiumBorder(),
                   )),
-              child: "Buy".text.xl.make(),
-            ).wh(100, 50) // width, height button ka badhtan hain
+              child: "Add to cart".text.xl.make(),
+            ).wh(130, 50) // width, height button ka badhtan hain
           ],
         ).p32(),
       ),
@@ -65,6 +66,11 @@ class HomeDetailPage extends StatelessWidget {
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                     10.heightBox,
+                    "One of the best shops where you will find different types of mobile, laptops, earphones and many more accessories. Check out our trending products and get an additional 10% off from our app. Offer valid till 30th of October,2022!!"
+                        .text
+                        .textStyle(context.captionStyle)
+                        .make()
+                        .p16()
                   ],
                 ).py64(),
               ),
