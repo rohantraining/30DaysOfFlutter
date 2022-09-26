@@ -56,7 +56,18 @@ class MyDrawer extends StatelessWidget {
                 textScaleFactor: 1.3,
                 style: TextStyle(color: Colors.white),
               ),
-            )
+            ),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.search,
+                color: Colors.white,
+              ),
+              title: Text(
+                "Search For",
+                textScaleFactor: 1.3,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
           ],
         ),
       ),
