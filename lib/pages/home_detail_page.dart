@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/models/catalog.dart';
+import 'package:flutter_application_2/widgets/home_widgets/add_to_cart.dart';
 import 'package:flutter_application_2/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -28,16 +29,8 @@ class HomeDetailPage extends StatelessWidget {
                 .xl4
                 .red800
                 .make(), //$999 ka size increase hoga
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                    context.theme.buttonColor,
-                  ),
-                  shape: MaterialStateProperty.all(
-                    StadiumBorder(),
-                  )),
-              child: "Add to cart".text.xl.make(),
+            AddToCart(
+              catalog: catalog,
             ).wh(130, 50) // width, height button ka badhtan hain
           ],
         ).p32(),

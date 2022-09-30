@@ -66,16 +66,21 @@ class _CardListState extends State<_CardList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _cart.items.length, //if not working ?.
-      itemBuilder: (context, index) => ListTile(
-        leading: Icon(Icons.done), //done icon right box hota hain
-        trailing: IconButton(
-          icon: Icon(Icons.remove_circle_outline),
-          onPressed: () {},
-        ),
-        title: _cart.items[index].name.text.make(),
-      ),
-    );
+    return _cart.items.isEmpty
+        ? "Nothing to show".text.xl3.makeCentered()
+        : ListView.builder(
+            itemCount: _cart.items.length, //if not working ?.
+            itemBuilder: (context, index) => ListTile(
+              leading: Icon(Icons.done), //done icon right box hota hain
+              trailing: IconButton(
+                icon: Icon(Icons.remove_circle_outline),
+                onPressed: () {
+                  _cart.remove(_cart.items[index]); //to remove items from cart
+                  setState(() {}); //set state to tell that UI is rebuild
+                },
+              ),
+              title: _cart.items[index].name.text.make(),
+            ),
+          );
   }
 }
