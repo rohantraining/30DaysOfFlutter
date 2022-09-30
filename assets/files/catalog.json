@@ -4,7 +4,7 @@
             "id": 1,
             "name": "iPhone 12 Pro",
             "desc": "Apple iPhone 12th generation",
-            "price": 999,
+            "price": 550,
             "color": "#33505a",
             "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc"
         },
@@ -12,7 +12,7 @@
             "id": 2,
             "name": "Oppo A76",
             "desc": "Oppo A76 Brighter and Shiner",
-            "price": 999,
+            "price": 350,
             "color": "#00ac51",
             "image":"https://img.freepik.com/free-photo/white-cell-phone-box-background_58702-4759.jpg?size=338&ext=jpg&ga=GA1.2.172149457.1657647211"
         },
@@ -21,7 +21,7 @@
             "id": 3,
             "name": "Motorola Moto G31",
             "desc": "Motorola M31 Smoother and Faster",
-            "price": 999,
+            "price": 255,
             "color": "#e0bfae",
             "image":"https://img.freepik.com/free-photo/new-cell-phone-colorful-background_58702-5210.jpg?size=626&ext=jpg&ga=GA1.2.172149457.1657647211"
         },
@@ -29,7 +29,7 @@
             "id": 4,
             "name": "Realme 10 Pro",
             "desc": "One of the Best Available",
-            "price": 999,
+            "price": 300,
             "color": "#544ee4",
             "image":"https://img.freepik.com/free-psd/premium-mobile-phone-screen-mockup-template_53876-65749.jpg?size=626&ext=jpg&ga=GA1.2.172149457.1657647211"
         },
@@ -37,7 +37,7 @@
             "id": 5,
             "name": "HP Laptop 15 12th Gen",
             "desc": "HP Laptop with best specifications",
-            "price": 999,
+            "price": 370,
             "color": "#e3e4e9",
             "image":"https://img.freepik.com/free-psd/macbook-laptop-screen-mockup_106244-2102.jpg?size=626&ext=jpg&ga=GA1.2.172149457.1657647211"
         },
@@ -45,7 +45,7 @@
             "id": 6,
             "name": "Dell Inspiron 16 Laptop",
             "desc": "Expensive but laptop with excellent features",
-            "price": 999,
+            "price": 430,
             "color": "#f73984",
             "image":"https://img.freepik.com/free-psd/laptop-psd-mockup-with-gradient-led-light_53876-138283.jpg?size=626&ext=jpg&ga=GA1.2.172149457.1657647211"
         },
@@ -53,7 +53,7 @@
             "id": 7,
             "name": "Apple Airpods Pro",
             "desc": "Apple Airpods Pro 1st gen",
-            "price": 999,
+            "price": 100,
             "color": "#1c1c1c",
             "image":"https://img.freepik.com/free-vector/headphones-wireless-realistic-composition-with-isolated-image-phones-with-power-bank-dock-station-with-reflections-vector-illustration_1284-73201.jpg?size=338&ext=jpg&ga=GA1.2.172149457.1657647211"
         },
@@ -61,7 +61,7 @@
             "id": 8,
             "name": "Boat Bassheads Wired Earphones",
             "desc": "Earphones with good quality",
-            "price": 999,
+            "price": 71,
             "color": "#7c95eb",
             "image":"https://img.freepik.com/free-vector/music-earphone-isolated_73621-988.jpg?size=338&ext=jpg&ga=GA1.2.172149457.1657647211"
         }

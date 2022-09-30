@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       // initialRoute: "/home", // by default home page open hota hain
-      initialRoute: MyRoutes.loginRoute, //login page pe jata hain
+      initialRoute: MyRoutes.homeRoute, //login page pe jata hain
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
