@@ -34,13 +34,13 @@ class MyApp extends StatelessWidget {
     // final mein data modify kar sakte hain aur const mein nhi kar sakte hain
 
     return MaterialApp(
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
 
       // initialRoute: "/home", // by default home page open hota hain
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.loginRoute, //login page pe jata hain
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),

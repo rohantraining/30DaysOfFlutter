@@ -16,7 +16,7 @@ class CatalogImage extends StatelessWidget {
         .box
         .rounded
         .p16 //andar kaa white kaa
-        .color(MyTheme.creamColor)
+        .color(context.canvasColor)
         .make()
         .p16() // pura box ka
         .w40(context);

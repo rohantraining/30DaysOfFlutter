@@ -15,9 +15,9 @@ class HomeDetailPage extends StatelessWidget {
     return Scaffold(
       appBar:
           AppBar(backgroundColor: Colors.transparent), //cross button to go back
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero, //edgeinsets.zero = Vx.zero
@@ -32,7 +32,7 @@ class HomeDetailPage extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                    MyTheme.darkBluishColor,
+                    context.theme.buttonColor,
                   ),
                   shape: MaterialStateProperty.all(
                     StadiumBorder(),
@@ -56,12 +56,14 @@ class HomeDetailPage extends StatelessWidget {
               arcType: VxArcType.CONVEY,
               edge: VxEdge.TOP,
               child: Container(
-                color: Colors.white,
+                color: context
+                    .cardColor, //card colour gives black and context.theme.canvascolor gives blue
                 width: context.screenWidth,
                 child: Column(
                   children: [
                     catalog.name.text.xl4
-                        .color(MyTheme.darkBluishColor)
+                        .color(context
+                            .accentColor) //iphone12 pro ko white font dega
                         .bold
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),

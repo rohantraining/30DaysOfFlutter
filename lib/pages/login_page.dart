@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+        color: context.canvasColor, // dark blue color detay
         child: SingleChildScrollView(
           child: Form(
             key: _formkey,
@@ -77,6 +78,23 @@ class _LoginPageState extends State<LoginPage> {
                         },
                       ),
                       TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Enter your email-id",
+                          labelText: "Email-id",
+                        ),
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Email-id cannot be empty";
+                          }
+
+                          return null; //null matlab no validation problem no error
+                        },
+                        // onChanged: (value) {
+                        //   name = value;
+                        //   setState(() {});
+                        // },
+                      ),
+                      TextFormField(
                         obscureText: true,
                         decoration: InputDecoration(
                           hintText: "Enter password",
@@ -92,11 +110,27 @@ class _LoginPageState extends State<LoginPage> {
                           return null;
                         },
                       ),
+                      TextFormField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          hintText: "Re-enter your  password",
+                          labelText: "Re-enter Password",
+                        ),
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Password cannot be empty";
+                          } else if (value.length < 6) {
+                            return "Password length should be atleast 6";
+                          }
+
+                          return null;
+                        },
+                      ),
                       SizedBox(
                         height: 40.0,
                       ),
                       Material(
-                        color: Colors.deepPurple,
+                        color: context.theme.buttonColor,
                         borderRadius:
                             BorderRadius.circular(changeButton ? 50 : 8),
                         child: InkWell(

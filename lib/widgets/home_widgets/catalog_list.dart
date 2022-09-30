@@ -42,7 +42,7 @@ class CatalogItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VxBox(
-        child: Row(
+            child: Row(
       children: [
         Hero(
           tag: Key(catalog.id.toString()),
@@ -55,7 +55,7 @@ class CatalogItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            catalog.name.text.lg.color(MyTheme.darkBluishColor).bold.make(),
+            catalog.name.text.lg.color(context.accentColor).bold.make(),
             catalog.desc.text.textStyle(context.captionStyle).make(),
             10.heightBox,
             ButtonBar(
@@ -67,7 +67,7 @@ class CatalogItem extends StatelessWidget {
                   onPressed: () {},
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                        MyTheme.darkBluishColor,
+                        context.theme.buttonColor,
                       ),
                       shape: MaterialStateProperty.all(
                         StadiumBorder(),
@@ -79,6 +79,11 @@ class CatalogItem extends StatelessWidget {
           ],
         ))
       ],
-    )).white.roundedLg.square(150).make().py16(); // py y means vertical padding
+    ))
+        .color(context.cardColor)
+        .roundedLg
+        .square(150)
+        .make()
+        .py16(); // py y means vertical padding
   }
 }
