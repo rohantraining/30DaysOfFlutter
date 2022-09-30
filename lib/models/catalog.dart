@@ -2,10 +2,6 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static final catModel = CatalogModel._internal();
-
-  CatalogModel._internal(); //creating a constructor
-  factory CatalogModel() => catModel;
   static List<Item> items = [
     //static bcoz to directly access it
     Item(

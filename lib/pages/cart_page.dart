@@ -58,11 +58,6 @@ class _CardTotal extends StatelessWidget {
 }
 
 class _CardList extends StatefulWidget {
-  @override
-  State<_CardList> createState() => _CardListState();
-}
-
-class _CardListState extends State<_CardList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
@@ -76,11 +71,17 @@ class _CardListState extends State<_CardList> {
                 icon: Icon(Icons.remove_circle_outline),
                 onPressed: () {
                   _cart.remove(_cart.items[index]); //to remove items from cart
-                  setState(() {}); //set state to tell that UI is rebuild
+                  //setState(() {}); //set state to tell that UI is rebuild
                 },
               ),
               title: _cart.items[index].name.text.make(),
             ),
           );
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }

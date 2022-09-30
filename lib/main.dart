@@ -7,18 +7,19 @@
 //see video 4:10:40
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/store.dart';
 import 'package:flutter_application_2/pages/cart_page.dart';
 import 'package:flutter_application_2/pages/home_page.dart';
 import 'package:flutter_application_2/pages/login_page.dart';
 import 'package:flutter_application_2/utils/routes.dart';
 import 'package:flutter_application_2/widgets/themes.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 //cmd + click to see anyones documentation
 
 void main() {
   //main method hain aur runApp method call kar ho raha
-  runApp(MyApp());
+  runApp(VxState(store: MyStore(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
