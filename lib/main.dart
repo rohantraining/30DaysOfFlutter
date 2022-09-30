@@ -1,5 +1,6 @@
 // U-Untracked aur A-Add hogayi sari files git cmds ke liye. class ek blueprint hain usse jo bana woh object hain
 // 3 trees in flutter:- Widget(what we write, immutable), Element(it calls build method and redraws,mutable) and Render Tree(render paints).
+// _catalog means private banaya hain
 // The info goes from widget to element and element to render
 //React Native use native widgets/components, flutter draws by itself
 //see video 4:10:40
