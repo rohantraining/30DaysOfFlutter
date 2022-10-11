@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 //import 'package:flutter_catalog/core/store.dart';
 //import 'package:flutter_catalog/models/cart.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import '../core/store.dart';
 import '../models/cart.dart';
 
@@ -61,7 +60,7 @@ class _CartTotal extends StatelessWidget {
 class _CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // VxState.watch(context, on: [RemoveMutation]);
+    VxState.watch(context, on: [RemoveMutation]);
     final CartModel _cart = (VxState.store as MyStore).cart;
     return _cart.items.isEmpty
         ? "Nothing to show".text.xl3.makeCentered()
@@ -71,9 +70,7 @@ class _CartList extends StatelessWidget {
               leading: Icon(Icons.done),
               trailing: IconButton(
                 icon: Icon(Icons.remove_circle_outline),
-                onPressed: () {
-                  _cart.remove(_cart.items[index]);
-                },
+                onPressed: () => RemoveMutation(_cart.items[index]),
               ),
               title: _cart.items[index].name.text.make(),
             ),
