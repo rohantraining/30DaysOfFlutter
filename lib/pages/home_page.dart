@@ -4,6 +4,8 @@ import 'dart:convert'; //dart convert provides json encoder decoder
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_2/core/store.dart';
+import 'package:flutter_application_2/models/cart.dart';
 import 'package:flutter_application_2/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -16,6 +18,7 @@ import '../widgets/home_widgets/catalog_list.dart';
 import '../widgets/item_widget.dart';
 // import 'home_widgets/catalog_header.dart';
 // import 'home_widgets/catalog_list.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,6 +32,8 @@ class _HomePageState extends State<HomePage> {
 
   final String name = "Rohan";
 
+  final url = "https://api.jsonbin.io/b/604dbddb683e7e079c4eefd3";
+
   @override
   void initState() {
     super.initState();
@@ -38,8 +43,12 @@ class _HomePageState extends State<HomePage> {
   loadData() async {
     await Future.delayed(Duration(seconds: 2));
     // await, sync matlab time lo aur sab load karo, file do
-    final catalogJson =
-        await rootBundle.loadString("assets/files/catalog.json");
+    // final catalogJson =
+    //     await rootBundle.loadString("assets/files/catalog.json");
+
+    final response = await http.get(Uri.parse(url));
+    final catalogJson = response.body;
+
     final decodedData = jsonDecode(
         catalogJson); // json decode gives dynamic value matlab string se dusre format mein convert karna,
     //json encode means dusre format se string mein convert karna
@@ -52,12 +61,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     //build method hain
     return Scaffold(
-        backgroundColor: context
-            .canvasColor, //or Theme.of(context).cardcolor or .canvacolor dono same hi hain
+        backgroundColor: context.canvasColor,
         floatingActionButton: FloatingActionButton(
-          //for cart button
           onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
           backgroundColor: context.theme.buttonColor,
           child: Icon(
@@ -65,6 +73,25 @@ class _HomePageState extends State<HomePage> {
             color: Colors.white,
           ),
         ),
+        // backgroundColor: context
+        //     .canvasColor, //or Theme.of(context).cardcolor or .canvacolor dono same hi hain
+        // floatingActionButton: VxBuilder(
+        //   mutations: {AddMutation, RemoveMutation},
+        //   builder: (ctx) => FloatingActionButton(
+        //     //for cart button
+        //     onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        //     backgroundColor: context.theme.buttonColor,
+        //     child: Icon(
+        //       CupertinoIcons.cart,
+        //       color: Colors.white,
+        //     ),
+        //   ).badge(
+        //       color: Vx.red500,
+        //       size: 22,
+        //       count: _cart.items.length,
+        //       textStyle:
+        //           TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+        // ),
         body: SafeArea(
           child: Container(
             padding: Vx
